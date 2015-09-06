@@ -10,6 +10,25 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+type TableDefinition struct {
+	Name 			string 		`json:"name"`
+	System 			bool 		`json:"system"`
+	Dependencies	[]string 	`json:"depends"`
+}
+
+type TableDataDefinition struct {
+	Name 			string 		`json:"table"`
+	Dependencies	[]string	`json:"depends"`
+}
+
+type DataConfig struct {
+	Data 	[]TableDataDefinition 	`json:"data"`
+}
+
+type TablesConfig struct {
+	Tables 	[]TableDefinition 	`json:"tables"`
+}
+
 type SchemaConfig struct {
 	Database 	string 	`json:"db"`
 	Host 		string 	`json:"host"`
@@ -18,16 +37,32 @@ type SchemaConfig struct {
 	SchemaRoot 	string 	`json:"schema_root"`
 }
 
-func loadSchemaConfig(schemaJsonPath string) {
-	rawJson, err := ioutil.ReadFile(schemaJsonPath)
+type Config interface {
+	loadConfig(jsonPath string)
+}
+
+func loadJson(jsonPath string) {
+	rawJson, err := ioutil.ReadFile(jsonPath)
 	if err != nill {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
+	return rawJson
+}
 
-	var config SchemaConfig
+func (config SchemaConfig) loadConfig(jsonPath string) {
+	rawJson := loadJson(jsonPath)
 	json.Unmarshal(rawJson, &config)
-	return config
+}
+
+func (config TablesConfig) loadConfig(jsonPath string) {
+	rawJson := loadJson(tablesJsonPath)
+	json.Unmarshal(rawJson, &config)
+}
+
+func (config DataConfig) loadConfig(jsonPath string) {
+	rawJson := loadJson(jsonPath)
+	json.Unmarshal(rawJson, &config)
 }
 
 func main() {
@@ -40,7 +75,6 @@ func main() {
 			Aliases: 	[]string{"i"},
 			Usage:		"install base schema",
 			Action: func(c *cli.Context) {
-
 			}
 		}
 	}
