@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"os"
 )
 
 type TableDefinition struct {
@@ -37,7 +38,7 @@ type Config interface {
 	loadConfig(jsonPath string)
 }
 
-func loadJson(jsonPath string) {
+func loadJson(jsonPath string) []byte {
 	rawJson, err := ioutil.ReadFile(jsonPath)
 	if err != nil {
 		fmt.Println(err.Error())
