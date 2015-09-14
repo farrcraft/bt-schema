@@ -8,30 +8,30 @@ import (
 )
 
 type TableDefinition struct {
-	Name 			string 		`json:"name"`
-	System 			bool 		`json:"system"`
-	Dependencies	[]string 	`json:"depends"`
+	Name         string   `json:"name"`
+	System       bool     `json:"system"`
+	Dependencies []string `json:"depends"`
 }
 
 type TableDataDefinition struct {
-	Name 			string 		`json:"table"`
-	Dependencies	[]string	`json:"depends"`
+	Name         string   `json:"table"`
+	Dependencies []string `json:"depends"`
 }
 
 type DataConfig struct {
-	Data 	[]TableDataDefinition 	`json:"data"`
+	Data []TableDataDefinition `json:"data"`
 }
 
 type TablesConfig struct {
-	Tables 	[]TableDefinition 	`json:"tables"`
+	Tables []TableDefinition `json:"tables"`
 }
 
 type SchemaConfig struct {
-	Database 	string 	`json:"db"`
-	Host 		string 	`json:"host"`
-	User 		string 	`json:"user"`
-	Password 	string 	`json:"password"`
-	SchemaRoot 	string 	`json:"schema_root"`
+	Database   string `json:"db"`
+	Host       string `json:"host"`
+	User       string `json:"user"`
+	Password   string `json:"password"`
+	SchemaRoot string `json:"schema_root"`
 }
 
 type Config interface {
