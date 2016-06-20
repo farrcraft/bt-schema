@@ -6,10 +6,17 @@ The schema tool is used to create the initial database tables and apply subseque
 # Usage
 
 ```sh
+# Create user & db
+$ bt-schema create --config /etc/brewtheory/schema.json
+```
+
+```sh
+# Install initial tables & data
 $ bt-schema install --config /etc/brewtheory/schema.json
 ```
 
 ```sh
+# Apply updates
 $ bt-schema update --config /etc/brewtheory/schema.json
 ```
 
@@ -30,4 +37,3 @@ versions/1/foobars.sql
 versions/2/foobars.sql
 
 The database as a whole has no concept of a version number.  Instead, each table has its own version number.  Only when a table has a migration applied to it does its version number get incremented.
-
