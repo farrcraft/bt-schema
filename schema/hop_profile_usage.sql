@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS hop_profile_usage (
 	PRIMARY KEY (hop_profile_usage_uuid),
 	FOREIGN KEY (hop_profile_uuid) REFERENCES hop_profile (hop_profile_uuid),
 	FOREIGN KEY (hop_usage_uuid) REFERENCES hop_usage (hop_usage_uuid),
-	UNIQUE KEY (hop_profile_uuid, hop_usage_uuid)
-) ENGINE=InnoDB default CHARSET=utf8;
+	UNIQUE (hop_profile_uuid, hop_usage_uuid)
+);

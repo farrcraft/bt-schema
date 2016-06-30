@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS bjcp_style_attribute_value_map (
 	PRIMARY KEY(bjcp_style_attribute_value_map_uuid),
 	FOREIGN KEY (bjcp_style_uuid) REFERENCES bjcp_style (bjcp_style_uuid),
 	FOREIGN KEY (attribute_value_uuid) REFERENCES attribute_value (attribute_value_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

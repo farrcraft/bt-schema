@@ -12,4 +12,4 @@ CREATE TABLE IF NOT EXISTS water_profile (
 	bicarbonate decimal(19,4),
 	ph decimal(19,4),
 	PRIMARY KEY (water_profile_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

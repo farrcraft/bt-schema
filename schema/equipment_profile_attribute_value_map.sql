@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS equipment_profile_attribute_value_map (
 	equipment_profile_uuid varchar(36) not null,
 	attribute_value_uuid varchar(36) not null,
 	PRIMARY KEY (equipment_profile_attribute_value_map_uuid),
-	UNIQUE KEY (equipment_profile_uuid, attribute_value_uuid),
+	UNIQUE (equipment_profile_uuid, attribute_value_uuid),
 	FOREIGN KEY (equipment_profile_uuid) REFERENCES equipment_profile (equipment_profile_uuid),
 	FOREIGN KEY (attribute_value_uuid) REFERENCES attribute_value (attribute_value_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

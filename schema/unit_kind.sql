@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS unit_kind (
 	name varchar(100) not null,
 	unit_category_uuid varchar(36) not null,
 	measurement_system_uuid varchar(36) default null,
-	state enum ('solid', 'liquid') default null,
+	state text default null CHECK (state IN ('solid', 'liquid')),
 	PRIMARY KEY (unit_kind_uuid),
 	FOREIGN KEY (unit_category_uuid) REFERENCES unit_category (unit_category_uuid),
 	FOREIGN KEY (measurement_system_uuid) REFERENCES measurement_system (measurement_system_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

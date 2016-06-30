@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS water_adjustment (
 	water_profile_uuid varchar(36) not null,
 	amount decimal(19,4),
 	PRIMARY KEY (water_adjustment_uuid),
-	UNIQUE KEY (ingredient_uuid, water_profile_uuid),
+	UNIQUE (ingredient_uuid, water_profile_uuid),
 	FOREIGN KEY (ingredient_uuid) REFERENCES ingredient (ingredient_uuid),
 	FOREIGN KEY (water_profile_uuid) REFERENCES water_profile (water_profile_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

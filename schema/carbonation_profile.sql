@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS carbonation_profile (
 	recipe_uuid varchar(36) not null,
 	PRIMARY KEY (carbonation_profile_uuid),
 	FOREIGN KEY (recipe_uuid) REFERENCES recipe (recipe_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

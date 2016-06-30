@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS equipment_profile_usage (
 	equipment_profile_uuid varchar(36) not null,
 	equipment_usage_uuid varchar(36) not null,
 	PRIMARY KEY (equipment_profile_usage_uuid),
-	UNIQUE KEY (equipment_profile_uuid, equipment_usage_uuid),
+	UNIQUE (equipment_profile_uuid, equipment_usage_uuid),
 	FOREIGN KEY (equipment_profile_uuid) REFERENCES equipment_profile (equipment_profile_uuid),
 	FOREIGN KEY (equipment_usage_uuid) REFERENCES equipment_usage (equipment_usage_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

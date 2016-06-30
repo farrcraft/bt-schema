@@ -11,6 +11,7 @@ type TableDefinition struct {
 	Name         string   `json:"name"`
 	System       bool     `json:"system"`
 	Dependencies []string `json:"depends"`
+	Loaded       bool     `json:"-"`
 }
 
 type TableDataDefinition struct {
@@ -19,11 +20,11 @@ type TableDataDefinition struct {
 }
 
 type DataConfig struct {
-	Data []TableDataDefinition `json:"data"`
+	Data []*TableDataDefinition `json:"data"`
 }
 
 type TablesConfig struct {
-	Tables []TableDefinition `json:"tables"`
+	Tables []*TableDefinition `json:"tables"`
 }
 
 type SchemaConfig struct {
@@ -32,6 +33,7 @@ type SchemaConfig struct {
 	User       string `json:"user"`
 	Password   string `json:"password"`
 	SchemaRoot string `json:"schema_root"`
+	DataRoot   string `json:"data_root"`
 }
 
 type Config interface {
@@ -41,23 +43,32 @@ type Config interface {
 func loadJson(jsonPath string) []byte {
 	rawJson, err := ioutil.ReadFile(jsonPath)
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println("Error reading config data: ", jsonPath, " - ", err.Error())
 		os.Exit(1)
 	}
 	return rawJson
 }
 
-func (config SchemaConfig) loadConfig(jsonPath string) {
+func (config *SchemaConfig) loadConfig(jsonPath string) {
 	rawJson := loadJson(jsonPath)
-	json.Unmarshal(rawJson, &config)
+	err := json.Unmarshal(rawJson, &config)
+	if err != nil {
+		fmt.Println("Error loading config: ", jsonPath, " - ", err)
+	}
 }
 
-func (config TablesConfig) loadConfig(jsonPath string) {
+func (config *TablesConfig) loadConfig(jsonPath string) {
 	rawJson := loadJson(jsonPath)
-	json.Unmarshal(rawJson, &config)
+	err := json.Unmarshal(rawJson, &config)
+	if err != nil {
+		fmt.Println("Error loading config: ", jsonPath, " - ", err)
+	}
 }
 
-func (config DataConfig) loadConfig(jsonPath string) {
+func (config *DataConfig) loadConfig(jsonPath string) {
 	rawJson := loadJson(jsonPath)
-	json.Unmarshal(rawJson, &config)
+	err := json.Unmarshal(rawJson, &config)
+	if err != nil {
+		fmt.Println("Error loading config: ", jsonPath, " - ", err)
+	}
 }

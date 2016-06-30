@@ -1,4 +1,4 @@
 INSERT INTO measurement_system (measurement_system_uuid, name) VALUES
-(UUID(), 'US'),
-(UUID(), 'Imperial'),
-(UUID(), 'Metric');
+(uuid_generate_v4(), 'US'),
+(uuid_generate_v4(), 'Imperial'),
+(uuid_generate_v4(), 'Metric');

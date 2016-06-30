@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS boil_schedule (
 	boil_schedule_uuid varchar(36) not null,
 	recipe_uuid varchar(36) not null,
-	duration int(10) not null default 0,
+	duration integer not null default 0,
 	PRIMARY KEY (boil_schedule_uuid),
 	FOREIGN KEY (recipe_uuid) REFERENCES recipe (recipe_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

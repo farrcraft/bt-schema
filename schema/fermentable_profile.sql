@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS fermentable_profile (
 	PRIMARY KEY (fermentable_profile_uuid),
 	FOREIGN KEY (fermentable_type_uuid) REFERENCES fermentable_type (fermentable_type_uuid),
 	FOREIGN KEY (vendor_uuid) REFERENCES vendor (vendor_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

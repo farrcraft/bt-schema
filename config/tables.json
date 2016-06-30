@@ -63,7 +63,7 @@
 			"name" : "measurement_type"
 		},
 		{
-			"name" : "bjcp_style",
+			"name" : "bjcp_style"
 		},
 		{
 			"name" : "bjcp_style_attribute_value_map",

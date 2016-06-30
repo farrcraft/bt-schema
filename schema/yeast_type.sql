@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS yeast_type (
 	yeast_type_uuid varchar(36) not null,
 	name varchar(50) not null,
 	PRIMARY KEY (yeast_type_uuid),
-	UNIQUE KEY (name)
-) ENGINE=InnoDB default CHARSET=utf8;
+	UNIQUE (name)
+);

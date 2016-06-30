@@ -2,6 +2,7 @@
 	"db" : "brewtheory",
 	"host" : "localhost",
 	"user" : "brewtheory",
-	"password" : "g00dbr3w5",
-	"schema_root" : "/opt/brewtheory/schema"
+	"password" : "brewtheory",
+	"schema_root" : "schema",
+	"data_root" : "data"
 }

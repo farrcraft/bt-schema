@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS batch_equipment (
 	FOREIGN KEY (batch_uuid) REFERENCES batch (batch_uuid),
 	FOREIGN KEY (equipment_profile_uuid) REFERENCES equipment_profile (equipment_profile_uuid),
 	FOREIGN KEY (equipment_usage_uuid) REFERENCES equipment_usage (equipment_usage_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

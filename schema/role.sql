@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS role (
 	name varchar(50) not null,
 	description varchar(255) default null,
 	PRIMARY KEY (role_uuid),
-	UNIQUE KEY (name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	UNIQUE (name)
+);

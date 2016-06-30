@@ -1,5 +1,5 @@
 INSERT INTO ingredient_usage (ingredient_usage_uuid, name) VALUES
-(UUID(), 'boil'),
-(UUID(), 'mash'),
-(UUID(), 'fermentation'),
-(UUID(), 'carbonation');
+(uuid_generate_v4(), 'boil'),
+(uuid_generate_v4(), 'mash'),
+(uuid_generate_v4(), 'fermentation'),
+(uuid_generate_v4(), 'carbonation');

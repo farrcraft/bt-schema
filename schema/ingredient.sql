@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS ingredient (
 	FOREIGN KEY (hop_uuid) REFERENCES hop (hop_uuid),
 	FOREIGN KEY (yeast_uuid) REFERENCES yeast (yeast_uuid),
 	FOREIGN KEY (distributor_uuid) REFERENCES distributor (distributor_uuid),
-	FOREIGN KEY (user_uuid) REFERENCES user (user_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	FOREIGN KEY (user_uuid) REFERENCES "user" (user_uuid)
+);

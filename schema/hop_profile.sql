@@ -5,4 +5,4 @@ CREATE TABLE IF NOT EXISTS hop_profile (
 	description varchar(2000) default null,
 	origin varchar(200) default null,
 	PRIMARY KEY (hop_profile_uuid)
-) ENGINE=InnoDB default CHARSET=utf8;
+);

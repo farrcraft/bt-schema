@@ -1,4 +1,4 @@
 INSERT INTO hop_type (hop_type_uuid, name) VALUES
-(UUID(), 'bittering'),
-(UUID(), 'aroma'),
-(UUID(), 'flavor');
+(uuid_generate_v4(), 'bittering'),
+(uuid_generate_v4(), 'aroma'),
+(uuid_generate_v4(), 'flavor');

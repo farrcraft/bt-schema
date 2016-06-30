@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS po_line_item (
 	PRIMARY KEY (po_line_item_uuid),
 	FOREIGN KEY (purchase_order_uuid) REFERENCES purchase_order (purchase_order_uuid),
 	FOREIGN KEY (ingredient_uuid) REFERENCES ingredient (ingredient_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

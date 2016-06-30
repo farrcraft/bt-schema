@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS water_mix (
 	PRIMARY KEY (water_mix_uuid),
 	FOREIGN KEY (water_source_uuid) REFERENCES water_source (water_source_uuid),
 	FOREIGN KEY (water_profile_uuid) REFERENCES water_profile (water_profile_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

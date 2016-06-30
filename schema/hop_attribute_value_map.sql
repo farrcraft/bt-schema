@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS hop_attribute_value_map (
 	PRIMARY KEY(hop_attribute_value_map_uuid),
 	FOREIGN KEY (hop_uuid) REFERENCES hop (hop_uuid),
 	FOREIGN KEY (attribute_value_uuid) REFERENCES attribute_value (attribute_value_uuid)
-) ENGINE=InnoDB default CHARSET=utf8;
+);

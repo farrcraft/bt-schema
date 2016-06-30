@@ -1,4 +1,4 @@
 INSERT INTO measurement_type (measurement_type_uuid, name) VALUES
-(UUID(), 'mash'),
-(UUID(), 'boil'),
-(UUID(), 'fermentation');
+(uuid_generate_v4(), 'mash'),
+(uuid_generate_v4(), 'boil'),
+(uuid_generate_v4(), 'fermentation');

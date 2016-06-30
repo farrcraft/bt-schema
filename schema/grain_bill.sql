@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS grain_bill (
 	FOREIGN KEY (recipe_uuid) REFERENCES recipe (recipe_uuid),
 	FOREIGN KEY (unit_kind_uuid) REFERENCES unit_kind (unit_kind_uuid),
 	FOREIGN KEY (ingredient_uuid) REFERENCES ingredient (ingredient_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

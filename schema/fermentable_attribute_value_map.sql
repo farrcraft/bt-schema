@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS fermentable_attribute_value_map (
 	fermentable_profile_uuid varchar(36) not null,
 	attribute_value_uuid varchar(36) not null,
 	PRIMARY KEY (fermentable_attribute_value_map_uuid),
-	UNIQUE KEY (fermentable_profile_uuid, attribute_value_uuid),
+	UNIQUE (fermentable_profile_uuid, attribute_value_uuid),
 	FOREIGN KEY (fermentable_profile_uuid) REFERENCES fermentable_profile (fermentable_profile_uuid),
 	FOREIGN KEY (attribute_value_uuid) REFERENCES attribute_value (attribute_value_uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+);

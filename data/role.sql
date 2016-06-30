@@ -1,2 +1,2 @@
 INSERT INTO role (role_uuid, name, description) VALUES
-(UUID(), 'admin', 'Administrative Role');
+(uuid_generate_v4(), 'admin', 'Administrative Role');
