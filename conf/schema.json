@@ -1,0 +1,10 @@
+{
+	"log_file": "/var/log/brewtheory/brewtheory-schema.log",
+	"log_level": "DEBUG",
+	"db" : "brewtheory",
+	"host" : "localhost",
+	"user" : "brewtheory",
+	"password" : "brewtheory",
+	"schema_root" : "/Users/joshfarr/Repos/brewtheory-schema/schema",
+	"data_root" : "/Users/joshfarr/Repos/brewtheory-schema/data"
+}

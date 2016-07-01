@@ -5,5 +5,5 @@ task :deps do
 end
 
 task :build do
-	`GOPATH=$(pwd)/vendor go build`
+	`cd src; GOPATH=$(pwd)/../vendor go build; cd ..`
 end

@@ -1,0 +1,486 @@
+{
+	"tables": [
+		{
+			"name" : "schema_version",
+			"system" : true,
+			"version" : 1
+		},
+		{
+			"name" : "measurement_system",
+			"version" : 1
+		},
+		{
+			"name" : "user",
+			"version" : 1,
+			"depends" : [
+				"measurement_system"
+			]
+		},
+		{
+			"name" : "role",
+			"version" : 1
+		},
+		{
+			"name" : "user_role",
+			"version" : 1,
+			"depends" : [
+				"user",
+				"role"
+			]
+		},
+		{
+			"name" : "oauth_client",
+			"version" : 1
+		},
+		{
+			"name" : "oauth_access_token",
+			"version" : 1,
+			"depends" : [
+				"user",
+				"oauth_client"
+			]
+		},
+		{
+			"name" : "unit_category",
+			"version" : 1
+		},
+		{
+			"name" : "unit_kind", 
+			"version" : 1,
+			"depends" : [
+				"unit_category",
+				"measurement_system"
+			]
+		},
+		{
+			"name" : "unit_conversion",
+			"version" : 1,
+			"depends" : [
+				"unit_kind"
+			]
+		},
+		{
+			"name" : "attribute_kind",
+			"version" : 1,
+		},
+		{
+			"name" : "attribute_value",
+			"version" : 1,
+			"depends" : [
+				"attribute_kind",
+				"unit_kind"
+			]
+		},
+		{
+			"name" : "measurement_type",
+			"version" : 1
+		},
+		{
+			"name" : "bjcp_style",
+			"version" : 1
+		},
+		{
+			"name" : "bjcp_style_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"bjcp_style",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "distributor",
+			"version" : 1
+		},
+		{
+			"name" : "vendor",
+			"version" : 1
+		},
+		{
+			"name" : "fermentable_type",
+			"version" : 1
+		},
+		{
+			"name" : "fermentable_profile",
+			"version" : 1,
+			"depends" : [
+				"fermentable_type",
+				"vendor"
+			]
+		},
+		{
+			"name" : "fermentable_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"fermentable_profile",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "ingredient_type",
+			"version" : 1
+		},
+		{
+			"name" : "ingredient_usage",
+			"version" : 1
+		},
+		{
+			"name" : "ingredient",
+			"version" : 1,
+			"depends" : [
+				"ingredient_type",
+				"fermentable_profile",
+				"hop",
+				"yeast",
+				"distributor",
+				"user"
+			]
+		},
+		{
+			"name" : "recipe_type",
+			"version" : 1
+		},
+		{
+			"name" : "recipe",
+			"version" : 1,
+			"depends" : [
+				"user",
+				"recipe_type",
+				"bjcp_style"
+			]
+		},
+		{
+			"name" : "batch",
+			"version" : 1,
+			"depends" : [
+				"recipe"
+			]
+		},
+		{
+			"name" : "batch_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"batch",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "measurement",
+			"version" : 1,
+			"depends" : [
+				"measurement_type",
+				"attribute_value",
+				"user",
+				"batch"
+			]
+		},
+		{
+			"name" : "recipe_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"recipe",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "grain_bill",
+			"version" : 1,
+			"depends" : [
+				"recipe",
+				"unit_kind",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "boil_schedule",
+			"version" : 1,
+			"depends" : [
+				"recipe"
+			]
+		},
+		{
+			"name" : "boil_step",
+			"version" : 1,
+			"depends" : [
+				"boil_schedule",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "mash_schedule",
+			"version" : 1,
+			"depends" : [
+				"recipe"
+			]
+		},
+		{
+			"name" : "mash_schedule_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"mash_schedule",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "mash_step_type",
+			"version" : 1
+		},
+		{
+			"name" : "mash_step",
+			"version" : 1,
+			"depends" : [
+				"mash_schedule",
+				"mash_step_type",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "mash_step_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"mash_step",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "fermentation_schedule",
+			"version" : 1,
+			"depends" : [
+				"recipe"
+			]
+		},
+		{
+			"name" : "fermentation_step",
+			"version" : 1,
+			"depends" : [
+				"fermentation_schedule",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "fermentation_step_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"fermentation_step",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "carbonation_profile",
+			"version" : 1,
+			"depends" : [
+				"recipe"
+			]
+		},
+		{
+			"name" : "purchase_order",
+			"version" : 1,
+			"depends" : [
+				"user",
+				"distributor"
+			]
+		},
+		{
+			"name" : "po_line_item",
+			"version" : 1,
+			"depends" : [
+				"purchase_order",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "inventory",
+			"version" : 1,
+			"depends" : [
+				"user"
+			]
+		},
+		{
+			"name" : "inventory_item",
+			"version" : 1,
+			"depends" : [
+				"inventory",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "hop_profile",
+			"version" : 1
+		},
+		{
+			"name" : "hop_profile_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"hop_profile",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "hop_profile_substitute",
+			"version" : 1,
+			"depends" : [
+				"hop_profile"
+			]
+		},
+		{
+			"name" : "hop_type",
+			"version" : 1
+		},
+		{
+			"name" : "hop_usage",
+			"version" : 1
+		},
+		{
+			"name" : "hop_profile_type",
+			"version" : 1,
+			"depends" : [
+				"hop_profile",
+				"hop_type"
+			]
+		},
+		{
+			"name" : "hop_profile_usage",
+			"version" : 1,
+			"depends" : [
+				"hop_profile",
+				"hop_usage"
+			]
+		},
+		{
+			"name" : "hop_form",
+			"version" : 1
+		},
+		{
+			"name" : "hop",
+			"version" : 1,
+			"depends" : [
+				"hop_form",
+				"distributor",
+				"hop_profile",
+				"user"
+			]
+		},
+		{
+			"name" : "hop_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"hop",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "yeast_type",
+			"version" : 1
+		},
+		{
+			"name" : "yeast_lab",
+			"version" : 1
+		},
+		{
+			"name" : "yeast_form",
+			"version" : 1
+		},
+		{
+			"name" : "yeast_flocculation",
+			"version" : 1
+		},
+		{
+			"name" : "yeast_profile",
+			"version" : 1,
+			"depends" : [
+				"yeast_type",
+				"yeast_lab",
+				"yeast_form",
+				"yeast_flocculation"
+			]
+		},
+		{
+			"name" : "yeast_style",
+			"version" : 1,
+			"depends" : [
+				"yeast_profile",
+				"bjcp_style"
+			]
+		},
+		{
+			"name" : "yeast_profile_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"yeast_profile",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "yeast",
+			"version" : 1,
+			"depends" : [
+				"yeast_profile",
+				"user"
+			]
+		},
+		{
+			"name" : "water_source",
+			"version" : 1
+		},
+		{
+			"name" : "water_profile",
+			"version" : 1
+		},
+		{
+			"name" : "water_mix",
+			"version" : 1,
+			"depends" : [
+				"water_source",
+				"water_profile"
+			]
+		},
+		{
+			"name" : "water_adjustment",
+			"version" : 1,
+			"depends" : [
+				"water_profile",
+				"ingredient"
+			]
+		},
+		{
+			"name" : "equipment_usage",
+			"version" : 1
+		},
+		{
+			"name" : "equipment_type",
+			"version" : 1
+		},
+		{
+			"name" : "equipment_profile",
+			"version" : 1,
+			"depends" : [
+				"equipment_type",
+				"user"
+			]
+		},
+		{
+			"name" : "equipment_profile_usage",
+			"version" : 1,
+			"depends" : [
+				"equipment_profile",
+				"equipment_usage"
+			]
+		},
+		{
+			"name" : "equipment_profile_attribute_value_map",
+			"version" : 1,
+			"depends" : [
+				"equipment_profile",
+				"attribute_value"
+			]
+		},
+		{
+			"name" : "batch_equipment",
+			"version" : 1,
+			"depends" : [
+				"batch",
+				"equipment_profile",
+				"equipment_usage"
+			]
+		}
+	]
+}

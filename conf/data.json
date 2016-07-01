@@ -1,0 +1,87 @@
+{
+	"data" : [
+		{
+			"table" : "role",
+			"version" : 1
+		},
+		{
+			"table" : "measurement_system",
+			"version" : 1
+		},
+		{
+			"table" : "unit_category",
+			"version" : 1
+		},
+		{
+			"table" : "unit_kind",
+			"version" : 1,
+			"depends" : [
+				"unit_category"
+			]
+		},
+		{
+			"table" : "attribute_kind",
+			"version" : 1
+		},
+		{
+			"table" : "measurement_type",
+			"version" : 1
+		},
+		{
+			"table" : "fermentable_type",
+			"version" : 1
+		},
+		{
+			"table" : "ingredient_type",
+			"version" : 1
+		},
+		{
+			"table" : "ingredient_usage",
+			"version" : 1
+		},
+		{
+			"table" : "recipe_type",
+			"version" : 1
+		},
+		{
+			"table" : "mash_step_type",
+			"version" : 1
+		},
+		{
+			"table" : "equipment_usage",
+			"version" : 1
+		},
+		{
+			"table" : "equipment_type",
+			"version" : 1
+		},
+		{
+			"table" : "hop_type",
+			"version" : 1
+		},
+		{
+			"table" : "hop_usage",
+			"version" : 1
+		},
+		{
+			"table" : "hop_form",
+			"version" : 1
+		},
+		{
+			"table" : "water_source",
+			"version" : 1
+		},
+		{
+			"table" : "yeast_type",
+			"version" : 1
+		},
+		{
+			"table" : "yeast_form",
+			"version" : 1
+		},
+		{
+			"table" : "yeast_flocculation",
+			"version" : 1
+		}
+	]
+}

@@ -7,17 +7,17 @@ The schema tool is used to create the initial database tables and apply subseque
 
 ```sh
 # Create user & db
-$ bt-schema create --config /etc/brewtheory/schema.json
+$ brewtheory-schema create --config /etc/brewtheory/schema.json
 ```
 
 ```sh
 # Install initial tables & data
-$ bt-schema install --config /etc/brewtheory/schema.json
+$ brewtheory-schema install --config /etc/brewtheory/schema.json
 ```
 
 ```sh
 # Apply updates
-$ bt-schema update --config /etc/brewtheory/schema.json
+$ brewtheory-schema update --config /etc/brewtheory/schema.json
 ```
 
 # Design
