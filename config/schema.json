@@ -1,8 +1,0 @@
-{
-	"db" : "brewtheory",
-	"host" : "localhost",
-	"user" : "brewtheory",
-	"password" : "brewtheory",
-	"schema_root" : "schema",
-	"data_root" : "data"
-}
